@@ -9,6 +9,20 @@
   </h:head>
   
   <h:body>
-  	<h3>Login</h3>
+  <h:form>
+    	<h3>Login</h3>
+    	Username: <h:inputText value="#{fname}" p:placeholder="First Name"/>
+      <br>
+      </br>
+      Password: <h:inputText value="#{surname}" p:placeholder="Surname"/>
+      <br>
+      </br>
+      
+       <h:commandButton value="Login" action="register" />
+       <br>
+       </br>
+       Don't have an account? Click <h:outputLink value = "register.xhtml" >Here</h:outputLink> to setup account
+  
+  </h:form>
   </h:body>
 </html>

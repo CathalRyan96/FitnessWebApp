@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+  xmlns:f="http://xmlns.jcp.org/jsf/core">
+  
+  <h:head>
+    <title>Login Page</title>
+  </h:head>
+  
+  <h:body>
+  <h:form>
+    	<h3>Register</h3>
+    	Firstname: <h:inputText value="#{fname}" p:placeholder="First Name"/>
+      <br>
+      </br>
+      Surname: <h:inputText value="#{surname}" p:placeholder="Surname"/>
+      <br>
+      </br>
+      
+      Email Address: <h:inputText value="#{email}" p:placeholder="Email Address"/>
+      <br>
+      </br>
+      
+      Phone Number: <h:inputText value="#{number}" p:placeholder="Number"/>
+      <br>
+      </br>
+      
+       <h:commandButton value="Create Account" action="details" />
+  
+  </h:form>
+  </h:body>
+</html>

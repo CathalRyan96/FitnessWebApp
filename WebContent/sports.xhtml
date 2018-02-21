@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+  xmlns:f="http://xmlns.jcp.org/jsf/core">
+  
+  <h:head>
+    <title>What Sports Do you Play?</title>
+  </h:head>
+  
+  <h:body>
+  <h:form>
+    	<h3>What Sports Do You Play?</h3>
+    	
+    	Sports: <h:selectOneRadio value="#{student.sports}">
+    		<f:selectItem itemValue="Hurling" itemLabel="Hurling" />
+    		
+		</h:selectOneRadio>
+		
+		<h:selectOneRadio value="#{student.sports}">
+			 <f:selectItem itemValue="Football" itemLabel="Football" />
+			
+		</h:selectOneRadio>
+		
+		<h:selectOneRadio value="#{student.sports}">
+			 <f:selectItem itemValue="Soccer" itemLabel="Soccer" />
+			
+		</h:selectOneRadio>
+		
+		<h:selectOneRadio value="#{student.sports}">
+			 <f:selectItem itemValue="Rugby" itemLabel="Rugby" />
+			
+		</h:selectOneRadio>
+		
+		<br>
+		</br>
+    	
+       Don't have an account? Click <h:outputLink value = "register.xhtml" >Here</h:outputLink> to setup account
+  
+  </h:form>
+  </h:body>
+</html>

@@ -1,6 +1,9 @@
 package managedBeans;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.manager.util.SessionUtils;
@@ -8,6 +11,7 @@ import org.apache.catalina.manager.util.SessionUtils;
 import DAO.LoginDAO;
 
 @ManagedBean
+@SessionScoped
 public class Login {
 	
 	private String pwd;
@@ -15,11 +19,6 @@ public class Login {
 	private String errorMsg;
 
 
-	public Login(String pwd, String user) {
-		super();
-		this.pwd = pwd;
-		this.user = user;
-	}
 	
 	public String getPwd() {
 		return pwd;
@@ -41,23 +40,30 @@ public class Login {
 	public void setErrorMsg(String errorMsg) {
 		this.errorMsg = errorMsg;
 	}
+
+	public Login(String pwd, String user, String errorMsg) {
+		super();
+		this.pwd = pwd;
+		this.user = user;
+		this.errorMsg = errorMsg;
+	}
 	
-	public String validateUsernamePassword() {
-		boolean valid = LoginDAO.validate(user, pwd);
-		if(valid)
-		{
-			HttpSession session = SessionUtils.getSession();
-			session.setAttribute("username", user);
-			return "admin";
-		}else {
-			
-			FacesContext.getCurrentInstance().addMessage(null,new
-					FacesMessage(FacesMessage.SEVERITY_WARN,
-							"Incorrect Username and Passowrd",
-							return "login";
-		}
-							
-			
+	
+	
+		public String validateUsernamePassword() {
+			boolean valid = LoginDAO.validate(user, pwd);
+			if (valid) {
+				HttpSession session = SessionUtils.getSession();
+				session.setAttribute("username", user);
+				return "admin";
+			} else {
+				FacesContext.getCurrentInstance().addMessage(
+						null,
+						new FacesMessage(FacesMessage.SEVERITY_WARN,
+								"Incorrect Username and Passowrd",
+								"Please enter correct username and Password"));
+				return "login";
+			}
 		}
 		
 	}
@@ -65,4 +71,4 @@ public class Login {
 	
 	
 
-}
+

@@ -3,6 +3,8 @@ package DAO;
 import java.sql.Connection;
 
 import com.mysql.jdbc.PreparedStatement;
+import com.mysql.jdbc.Statement;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -14,29 +16,37 @@ import java.sql.DriverManager;
 public class LoginDAO {
 private DataSource mysqlDS;
 	
-	public static boolean validate(String user, String password) {
-		Connection con = null;
-		java.sql.PreparedStatement ps = null;
-		
-		try {
-			con = DataConnect.getConnection();
-			ps = con.prepareStatement("Select uname, password from Users where uname = ? and password = ?");
-			ps.setString(1, user);
-			ps.setString(2, password);
+	DataConnect dc = new DataConnect();
+	Connection conn = dc.getConnection();
+	
+	if(conn==null) {
+		System.out.println("connection failed");
+	}else {
+		String query = "SELECT uname FROM users where uid = 1";
 
-			ResultSet rs = ps.executeQuery();
+		 
 
-			if (rs.next()) {
-				//result found, means valid inputs
-				return true;
-			}
-		} catch (SQLException ex) {
-			System.out.println("Login error -->" + ex.getMessage());
-			return false;
-		} finally {
-			DataConnect.close(con);
-		}
-		return false;
+	      // create the java statement
+
+	      Statement st = conn.createStatement();
+
+	     
+
+	      // execute the query, and get a java resultset
+
+	      ResultSet rs = st.executeQuery(query);
+
+	     
+
+	      // iterate through the java resultset
+
+	      while (rs.next()){
+
+	        String firstName = rs.getString("firstname");
+
+	        out.print("\nQuery returns the firstname: \n"+firstName);
+
+	      }
 	}
 		
 	}

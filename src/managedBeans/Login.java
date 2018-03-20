@@ -50,21 +50,7 @@ public class Login {
 	
 	
 	
-		public String validateUsernamePassword() {
-			boolean valid = LoginDAO.validate(user, pwd);
-			if (valid) {
-				HttpSession session = SessionUtils.getSession();
-				session.setAttribute("username", user);
-				return "admin";
-			} else {
-				FacesContext.getCurrentInstance().addMessage(
-						null,
-						new FacesMessage(FacesMessage.SEVERITY_WARN,
-								"Incorrect Username and Passowrd",
-								"Please enter correct username and Password"));
-				return "login";
-			}
-		}
+		
 		
 	}
 	

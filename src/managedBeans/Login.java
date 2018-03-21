@@ -1,14 +1,9 @@
 package managedBeans;
 
-import javax.faces.application.FacesMessage;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.manager.util.SessionUtils;
-
-import DAO.LoginDAO;
 
 @ManagedBean
 @SessionScoped

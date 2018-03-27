@@ -1,0 +1,9 @@
+body {
+	background-color: lightblue;
+	border:solid 10px #000000;
+}
+
+.centred-form {
+	margin : 0 auto;
+}
+

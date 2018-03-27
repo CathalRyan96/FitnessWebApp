@@ -9,7 +9,10 @@
   </h:head>
   
   <h:body>
+  	    		<h:outputStylesheet library="css" name="style.css"/>
+  	
   <h:form>
+  	<h:panelGrid styleClass="centred-form">
     	<h3>Register</h3>
     	User ID: <h:inputText value="#{userID}" p:placeholder="User ID"/>
       <br>
@@ -29,7 +32,7 @@
        </br>
        <h:commandButton value="Have An Account?, Login" action="login" />
        
-  
+  </h:panelGrid>
   </h:form>
   </h:body>
 </html>

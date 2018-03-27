@@ -9,8 +9,13 @@
   </h:head>
   
   <h:body>
+    		<h:outputStylesheet library="css" name="style.css"/>
+  
+  
+  <h3>Login</h3>
+  
   <h:form>
-    	<h3>Login</h3>
+  	<h:panelGrid styleClass="centred-form">
     	Username: <h:inputText value="#{login.user}" p:placeholder="Username"/>
       <br>
       </br>
@@ -24,6 +29,7 @@
        Don't have an account? Click <h:outputLink value = "register.xhtml" >Here</h:outputLink> to setup account
   		<br>
        </br>
+       </h:panelGrid>
   </h:form>
   </h:body>
 </html>

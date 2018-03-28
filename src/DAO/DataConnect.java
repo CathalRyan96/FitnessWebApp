@@ -2,8 +2,12 @@ package DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+
+import managedBeans.Hurling;
 
 public class DataConnect {
 	
@@ -46,6 +50,36 @@ public class DataConnect {
 		}catch(Exception ex) {
 			System.out.println(ex);
 		}
-	}
+	}//getData()
+	
+	//Load hurling exercises
+		public ArrayList<Hurling> getCountries() throws Exception{
+			
+			 ArrayList<Hurling> countries = new ArrayList<>();
 
-}
+			 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbfitness","root","");
+			 
+			 PreparedStatement myStmt = con.prepareStatement("select * from hurling");
+
+				ResultSet rs = myStmt.executeQuery();
+				
+				
+				while (rs.next()) {
+					
+					Hurling hurling = new Hurling();
+					
+					int hurlingId = rs.getInt("hurling_id");
+					hurling.setHurlingId(hurlingId);
+					String hurlingEx = rs.getString("hurling_ex");
+					hurling.setHurlingEx(hurlingEx);
+					
+					
+					
+				}
+				
+				
+				return countries;
+		}
+	
+
+}//class

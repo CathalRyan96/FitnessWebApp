@@ -11,3 +11,14 @@ CREATE TABLE hurling (
   PRIMARY KEY (hurling_id),
   UNIQUE (hurling_ex)
 );
+
+
+INSERT INTO hurling 
+    (hurling_id, hurling_ex) 
+VALUES 
+    (1,"Press Ups, 4 sets of 10"),
+    (2,"Sit ups, 5 sets of 10"),
+    (3,"Box Jumps, 5 sets of 5"),
+	(4,"Burpees, 4 sets of 10"),
+	(5,"Lunges, 5 sets of 5"),
+	(6,"Plank, Hold for 60 seconds");

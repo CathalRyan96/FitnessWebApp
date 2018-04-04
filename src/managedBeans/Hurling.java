@@ -8,7 +8,12 @@ public class Hurling {
 	private int hurlingId;
 	private String hurlingEx;
 	
-	public Hurling() {}
+	public Hurling() {
+		super();
+
+	}
+	
+	
 	
 	public Hurling(int hurlingId, String hurlingEx) {
 		this.hurlingId = hurlingId;

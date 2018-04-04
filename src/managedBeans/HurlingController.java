@@ -18,11 +18,11 @@ public class HurlingController {
 		ArrayList<Hurling> hurlingExercises;
 		private DataConnect dc;
 		
-		public void loadCountries() throws Exception{
+		public void loadHurlingEx() throws Exception{
 			DataConnect dc = new DataConnect();
 			
 			 hurlingExercises = new ArrayList<>();
-			 hurlingExercises =  dc.getCountries();
+			 hurlingExercises =  dc.getHurlingEx();
 
 		}	
 }

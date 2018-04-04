@@ -53,33 +53,26 @@ public class DataConnect {
 	}//getData()
 	
 	//Load hurling exercises
-		public ArrayList<Hurling> getCountries() throws Exception{
+	public ArrayList<Hurling> getHurlingEx() {
+		try {
+			String query = "select * from hurling";
+			rs = st.executeQuery(query);			
+			System.out.println("Info from database");
 			
-			 ArrayList<Hurling> countries = new ArrayList<>();
+			while(rs.next()) {
+				int hurlingId = rs.getInt("hurlingId");
+				System.out.println("HurlingId: "+ hurlingId);
 
-			 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbfitness","root","");
-			 
-			 PreparedStatement myStmt = con.prepareStatement("select * from hurling");
-
-				ResultSet rs = myStmt.executeQuery();
 				
+				String hurlingEx = rs.getString("hurling_ex");
+				System.out.println("HurlingEx: "+ hurlingEx);
 				
-				while (rs.next()) {
-					
-					Hurling hurling = new Hurling();
-					
-					int hurlingId = rs.getInt("hurling_id");
-					hurling.setHurlingId(hurlingId);
-					String hurlingEx = rs.getString("hurling_ex");
-					hurling.setHurlingEx(hurlingEx);
-					
-					
-					
-				}
-				
-				
-				return countries;
+			}
+			
+		}catch(Exception ex) {
+			System.out.println(ex);
 		}
-	
+		return null;
+	}
 
 }//class

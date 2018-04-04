@@ -1,7 +1,7 @@
 package managedBeans;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.*;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -15,14 +15,14 @@ import DAO.DataConnect;
 @ManagedBean
 public class HurlingController {
 	
-		ArrayList<Hurling> hurlingExercises;
-		private DataConnect dc;
+	ArrayList<Hurling> hurlingEx;
+	private DataConnect dc;
+	
+	public void loadHurlingEx() throws Exception{
+		DataConnect dc = new DataConnect();
 		
-		public void loadHurlingEx() throws Exception{
-			DataConnect dc = new DataConnect();
-			
-			 hurlingExercises = new ArrayList<>();
-			 hurlingExercises =  dc.getHurlingEx();
-
-		}	
+		 hurlingEx = new ArrayList<>();
+		 hurlingEx =  dc.getHurlingEx();
+		System.out.println("Hurling.size " + hurlingEx.size());	
+	}
 }

@@ -7,10 +7,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.sql.DataSource;
+
 import managedBeans.Hurling;
 
 public class DataConnect {
-	
+	private DataSource mysqlDS;
+
 	private Connection con;
 	private Statement st;
 	private ResultSet rs;
@@ -53,26 +56,23 @@ public class DataConnect {
 	}//getData()
 	
 	//Load hurling exercises
-	public ArrayList<Hurling> getHurlingEx() {
+	public void getHurlingEx() {
 		try {
 			String query = "select * from hurling";
 			rs = st.executeQuery(query);			
 			System.out.println("Info from database");
 			
 			while(rs.next()) {
-				int hurlingId = rs.getInt("hurlingId");
+				int hurlingId = rs.getInt("hurling_id");
 				System.out.println("HurlingId: "+ hurlingId);
 
 				
 				String hurlingEx = rs.getString("hurling_ex");
-				System.out.println("HurlingEx: "+ hurlingEx);
+				System.out.println("Uname: "+ hurlingEx);
 				
 			}
-			
-		}catch(Exception ex) {
-			System.out.println(ex);
-		}
-		return null;
+	}catch(Exception ex) {
+		System.out.println(ex);
 	}
-
+	}
 }//class

@@ -8,18 +8,19 @@ public class Hurling {
 	private int hurlingId;
 	private String hurlingEx;
 	
+
+	
 	public Hurling() {
 		super();
-
 	}
-	
-	
-	
+
+
 	public Hurling(int hurlingId, String hurlingEx) {
+		super();
 		this.hurlingId = hurlingId;
 		this.hurlingEx = hurlingEx;
-		
 	}
+
 	
 	//Getters and Setters
 	public int getHurlingId() {

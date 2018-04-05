@@ -1,5 +1,8 @@
 package managedBeans;
 
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean
 public class Football {
 	private int footballId;
 	private String footballEx;

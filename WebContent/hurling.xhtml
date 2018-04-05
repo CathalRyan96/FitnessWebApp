@@ -9,9 +9,7 @@
   <h:head>
     <title>Country</title>
     <f:metadata>
-  <f:event type="preRenderView" 
-      listener="#{hurlingController.loadHurlingEx()}"/>
-	</f:metadata>
+  
     
   </h:head>
   
@@ -20,7 +18,7 @@
   
   
   </h:form>
-  <h:dataTable value="#{hurlingController.getHurlingEx}" var ="u" border="1">
+  <h:dataTable value="#{hurlingController.getHurling}" var ="u" border="1">
   
   <h:column>
   <f:facet name = "header">

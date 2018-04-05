@@ -1,38 +1,59 @@
 package managedBeans;
 
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import com.mysql.jdbc.CommunicationsException;
+import java.sql.Connection;
 import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 
-import DAO.DataConnect;
+
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class HurlingController {
-	
-	ArrayList<Hurling> getHurlingEx;
-	private DataConnect dc;
-	
-	public void loadHurlingEx() throws Exception{
-		DataConnect dc = new DataConnect();
+	public List<Hurling>getHurling(){
+		Connection con = null;
 		
-		 getHurlingEx = new ArrayList<>();
-		 getHurlingEx =  dc.getHurlingEx();
-		System.out.println("Hurling.size " + getHurlingEx.size());	
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbfitness","root","");
+		}catch(ClassNotFoundException ex) {
+			System.out.println("Error: "+ ex);
+		}catch(SQLException ex) {	
+			System.out.println("Error: "+ ex);
+			
+		}
+		
+		List<Hurling> hurlingEx = new ArrayList<Hurling>();
+		try {
+			PreparedStatement st = con.prepareStatement("select * from hurling");
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				Hurling h = new Hurling();
+				h.setHurlingId(rs.getInt("hurling_id"));
+				h.setHurlingEx(rs.getString("hurling_ex"));
+				
+				hurlingEx.add(h);
+			}
+			rs.close();
+			st.close();
+			con.close();
+		}catch(SQLException ex) {
+			System.out.println("Error: "+ ex);
+		}
+		
+		return hurlingEx;
+		
 	}
 	
-	public ArrayList<Hurling> getHurlingEx() {
-		return getHurlingEx;
-	}
-	
-	public void setHurlingEx(ArrayList<Hurling> hurlingEx) {
-		this.getHurlingEx = hurlingEx;
-	}
 }

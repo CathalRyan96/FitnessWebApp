@@ -16,28 +16,9 @@
   	
     	<h3>What Sports Do You Play?</h3>
     	
-    	Sports: <h:selectOneRadio value="#{student.sports}">
-    		<f:selectItem itemValue="Hurling" itemLabel="Hurling" />
-    		
-		</h:selectOneRadio>
+  	  <h:outputLink value = "hurling.xhtml" >Hurling</h:outputLink>
 		
-		<h:selectOneRadio value="#{student.sports}">
-			 <f:selectItem itemValue="Football" itemLabel="Football" />
-			
-		</h:selectOneRadio>
 		
-		<h:selectOneRadio value="#{student.sports}">
-			 <f:selectItem itemValue="Soccer" itemLabel="Soccer" />
-			
-		</h:selectOneRadio>
-		
-		<h:selectOneRadio value="#{student.sports}">
-			 <f:selectItem itemValue="Rugby" itemLabel="Rugby" />
-			
-		</h:selectOneRadio>
-		
-		<br>
-		</br>
     	
        Don't have an account? Click <h:outputLink value = "register.xhtml" >Here</h:outputLink> to setup account
   </h:panelGrid>

@@ -30,3 +30,15 @@ CREATE TABLE football (
   PRIMARY KEY (football_id),
   UNIQUE (football_ex)
 );
+
+
+
+INSERT INTO football 
+    (football_id, football_ex) 
+VALUES 
+    (1,"Press Ups, 4 sets of 10"),
+    (2,"Sit ups, 5 sets of 10"),
+    (3,"Ten Metre Sprints, 5 sets of 5"),
+	(4,"Burpees, 4 sets of 10"),
+	(5,"Spiderman Crawl, 5 sets of 5"),
+	(6,"Russian Twist, Hold for 60 seconds");

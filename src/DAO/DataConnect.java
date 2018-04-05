@@ -56,7 +56,9 @@ public class DataConnect {
 	}//getData()
 	
 	//Load hurling exercises
-	public void getHurlingEx() {
+	public ArrayList<Hurling> getHurlingEx() {
+		 ArrayList<Hurling> hurlingExercises = new ArrayList<>();
+
 		try {
 			String query = "select * from hurling";
 			rs = st.executeQuery(query);			
@@ -71,8 +73,10 @@ public class DataConnect {
 				System.out.println("Uname: "+ hurlingEx);
 				
 			}
+
 	}catch(Exception ex) {
 		System.out.println(ex);
 	}
+		return hurlingExercises;
 	}
 }//class

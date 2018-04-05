@@ -22,3 +22,11 @@ VALUES
 	(4,"Burpees, 4 sets of 10"),
 	(5,"Lunges, 5 sets of 5"),
 	(6,"Plank, Hold for 60 seconds");
+
+	
+CREATE TABLE football (
+  football_id INT NOT NULL,
+  football_ex VARCHAR(200) NOT NULL,
+  PRIMARY KEY (football_id),
+  UNIQUE (football_ex)
+);

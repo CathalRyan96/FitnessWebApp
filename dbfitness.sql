@@ -50,3 +50,14 @@ VALUES
   PRIMARY KEY (rugby_id),
   UNIQUE (rugby_ex)
 );
+
+
+INSERT INTO rugby 
+    (rugby_id, rugby_ex) 
+VALUES 
+    (1,"Press Ups, 4 sets of 10"),
+    (2,"Chin Ups, 5 sets of 10"),
+    (3,"Dumbbell Split Squats, 5 sets of 5"),
+	(4,"Burpees, 4 sets of 10"),
+	(5,"Prone Leg Curl, 5 sets of 5"),
+	(6,"Russian Twist, 4 sets of 4");

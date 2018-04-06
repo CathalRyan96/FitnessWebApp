@@ -42,3 +42,11 @@ VALUES
 	(4,"Burpees, 4 sets of 10"),
 	(5,"Spiderman Crawl, 5 sets of 5"),
 	(6,"Russian Twist, Hold for 60 seconds");
+	
+	
+	CREATE TABLE rugby (
+  rugby_id INT NOT NULL,
+  rugby_ex VARCHAR(200) NOT NULL,
+  PRIMARY KEY (rugby_id),
+  UNIQUE (rugby_ex)
+);

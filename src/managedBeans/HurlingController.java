@@ -6,15 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 
-import com.mysql.jdbc.CommunicationsException;
 import java.sql.Connection;
-import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 
 
 

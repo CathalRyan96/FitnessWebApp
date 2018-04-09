@@ -61,3 +61,23 @@ VALUES
 	(4,"Burpees, 4 sets of 10"),
 	(5,"Prone Leg Curl, 5 sets of 5"),
 	(6,"Russian Twist, 4 sets of 4");
+	
+	
+CREATE TABLE soccer (
+  soccer_id INT NOT NULL,
+  soccer_ex VARCHAR(200) NOT NULL,
+  PRIMARY KEY (soccer_id),
+  UNIQUE (soccer_ex)
+);
+
+
+
+INSERT INTO soccer 
+    (soccer_id, soccer_ex) 
+VALUES 
+    (1,"Barbell Squat, 1 sets of 8"),
+    (2,"Box Jumps, 1 sets of 20"),
+    (3,"Bench Dips, 1 set of 20"),
+	(4,"Burpees, 4 sets of 10"),
+	(5,"Jogging on Treadmil, 8 sets of 200 meter sprints"),
+	(6,"Knee Tuck Jumps, 3 sets of 10");

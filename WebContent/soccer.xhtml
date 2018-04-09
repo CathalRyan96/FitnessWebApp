@@ -7,31 +7,31 @@
 
   
   <h:head>
-    <title>Rugby</title>
-    
+    <title>Soccer</title>
+ 
   </h:head>
   
   <h:body>
-          		<h:outputStylesheet library="css" name="style.css"/>
+        		<h:outputStylesheet library="css" name="style.css"/>
   
   <h:form>
   
   
   </h:form>
-  <h:dataTable value="#{rugbyController.getRugby()}" var ="u" border="1">
+  <h:dataTable value="#{soccerController.getSoccer()}" var ="u" border="1">
   
   <h:column>
   <f:facet name = "header">
   Excercise ID
   </f:facet>
-  #{u.rugbyId}
+  #{u.soccerId}
   </h:column>
   
   <h:column>
   <f:facet name="header">
   Exercises 
   </f:facet>
-  #{u.rugbyEx}
+  #{u.soccerEx}
   </h:column>
   
   

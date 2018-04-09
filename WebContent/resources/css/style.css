@@ -1,6 +1,7 @@
 body {
 	background-color: lightblue;
 	border:solid 10px #000000;
+	font-family: sans-serif;
 }
 
 .centred-form {

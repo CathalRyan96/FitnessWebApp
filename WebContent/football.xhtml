@@ -12,10 +12,14 @@
   </h:head>
   
   <h:body>
+          		<h:outputStylesheet library="css" name="style.css"/>
+  
   <h:form>
+      	        <h:commandButton value="Other Exercises" action="sports" />
   
   
   </h:form>
+  
   <h:dataTable value="#{footballController.getFootball()}" var ="u" border="1">
   
   <h:column>

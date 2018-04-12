@@ -13,3 +13,8 @@ table.sports {
     border-collapse: collapse; 
     border-bottom: 1px solid #000;
 }
+
+th{
+	background-color: #4CAF50;
+	color: white;
+}
